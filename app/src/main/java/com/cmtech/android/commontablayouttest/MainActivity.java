@@ -10,10 +10,6 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.cmtech.android.commontablayouttest.R;
-import com.cmtech.android.commontablayouttest.SimpleCardFragment;
-import com.cmtech.android.commontablayouttest.TabEntity;
-import com.cmtech.android.commontablayouttest.ViewFindUtils;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
@@ -26,7 +22,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Context mContext = this;
+    private Context mContext  = this;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
     private ArrayList<Fragment> mFragments2 = new ArrayList<>();
     /*文本信息*/
