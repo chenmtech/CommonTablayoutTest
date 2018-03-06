@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
         mTabLayout_1.setTabData(mTabEntities);
         tl_2();
+
         mTabLayout_3.setTabData(mTabEntities, this, R.id.fl_change, mFragments2);
         mTabLayout_4.setTabData(mTabEntities);
         mTabLayout_5.setTabData(mTabEntities);
@@ -138,6 +139,12 @@ public class MainActivity extends AppCompatActivity {
         if (rtv_2_3 != null) {
             rtv_2_3.setBackgroundColor(Color.parseColor("#6D8FB0"));
         }
+
+        mTabEntities.add(new TabEntity("添加", mIconSelectIds[3], mIconUnselectIds[3]));
+        mFragments2.add(SimpleCardFragment.getInstance("Switch Fragment " + "添加"));
+        mTabLayout_2.notifyDataSetChanged();
+        mViewPager.setCurrentItem(mViewPager.getAdapter().getCount()-1);
+
     }
 
     Random mRandom = new Random();
@@ -177,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        mViewPager.setCurrentItem(1);
+        mViewPager.setCurrentItem(2);
     }
 
     private class MyPagerAdapter extends FragmentPagerAdapter {
@@ -192,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public CharSequence getPageTitle(int position) {
-            return mTitles[position];
+            return mTabEntities.get(position).getTabTitle();
         }
 
         @Override
